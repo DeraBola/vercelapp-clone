@@ -14,12 +14,11 @@ interface Props {
 export default function NavBar({ size }: Props) {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   return (
-    <div className="w-full h-[4rem] flex justify-between z-20 bg-transparent backdrop-blur-lg fixed top-0 left-0 items-center p-2 lg:px-20">
-      <div className="flex w-24 lg:w-30 p-2 items-center">
+    <div className="w-full h-[4rem] flex justify-between z-20 bg-transparent backdrop-blur-lg fixed top-0 left-0 items-center px-4 lg:p-2 lg:px-20">
+      <div className="flex w-24 lg:w-30 items-center">
        {showMenu ? <Image src={Vercel} width={size} height={size} alt="" /> : <Image src={Vercel} width={size} height={size} alt="" />} 
-        {/* <div className="text-white-100 text-md">{showMenu ? "Menu" : `We're on a Mission`}</div> */}
       </div>
-      <div className="hidden mt-5 lg:block items-center">
+      <div className="hidden mt-4 lg:mt-1 lg:block items-center">
         <ul
           className={`${inter.className} flex gap-7 justify-center items-center`}
         >
@@ -29,28 +28,28 @@ export default function NavBar({ size }: Props) {
               <HiChevronDown size="12" /> 
             </Link>
           </li>
-          <li className="m-0 max-w-[30ch] text-sm opacity-70 flex items-center bg-white-100 hover:opacity-100">
+          <li className="m-0 max-w-[30ch] text-sm opacity-70 flex items-center bg-transparent hover:opacity-100">
             <Link href="/Services">Docs</Link>
-          </li>
-          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-white-100 hover:opacity-100 ">
+        </li>
+          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-transparent hover:opacity-100 ">
             <Link href="/Project">Templates</Link>
           </li>
-          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-white-100 hover:opacity-100">
+          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-transparent hover:opacity-100">
             <Link href="/Nft">Integrations</Link>
           </li>
-          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-white-100 hover:opacity-100">
+          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-transparent hover:opacity-100">
             <Link href="/Faqs">Customers</Link>
           </li>
-          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-white-100 hover:opacity-100">
+          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-transparent hover:opacity-100">
             <Link href="/Nft">Enterprise</Link>
           </li>
-          <li className="mr-12 max-w-[30ch] text-sm opacity-70  flex items-center bg-white-100 hover:opacity-100">
+          <li className="mr-12 max-w-[30ch] text-sm opacity-70  flex items-center bg-transparent hover:opacity-100">
             <Link href="/Faqs">Pricing</Link>
           </li>
-          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-white-100 hover:opacity-100">
+          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-transparent hover:opacity-100">
             <Link href="/Genesispass">Contact</Link>
           </li>
-          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-white-100 hover:opacity-100">
+          <li className="m-0 max-w-[30ch] text-sm opacity-70  flex items-center bg-transparent hover:opacity-100">
             <Link href="/Services">Login</Link>
           </li>
           <li className="m-0 max-w-[30ch] text-sm opacity-100 py-1.5 px-5 rounded flex items-center bg-black text-white-100">
@@ -61,15 +60,14 @@ export default function NavBar({ size }: Props) {
 
       {showMenu ? (
         <div className="flex items-center">
-          <AiOutlineClose  className="block lg:hidden z-20"
+          <AiOutlineClose  className="block lg:hidden z-20 relative"
           size={32}
-          // color="#FFF"
           onClick={() => setShowMenu(false)} />
         </div>
        
       ) : (
         <div className="flex items-center">
-        <HiBars2 className="block lg:hidden z-20"
+        <HiBars2 className="block relative lg:hidden z-20"
           size={32}
           onClick={() => setShowMenu(true)} 
           />
@@ -78,7 +76,7 @@ export default function NavBar({ size }: Props) {
       <div
         className={`${
           showMenu ? "translate-x-0" : "translate-x-[-100%]"
-        } z-10 w-full fixed flex p-2 bg-[rgb(241,115,115)] justify-start items-center top-[3.5rem] left-0 transition-transform overflow-y-auto `}
+        } z-10 w-full fixed flex p-4 bg-[#fff] justify-start items-center top-[4.5rem] left-0 transition-transform `}
       >
          <ul
           className={`${inter.className} bg-[#fff] z-10 w-full h-full flex flex-col justify-start items-start p-1`}
