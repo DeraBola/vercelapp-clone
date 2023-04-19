@@ -8,7 +8,7 @@ import React, { ReactNode } from 'react'
 export default function Layout({children}: LayoutProps) {
   return (
     <div> 
-       <NavBar size={120} /> 
+       <NavBar size={500} /> 
       { children }
     </div>
   )

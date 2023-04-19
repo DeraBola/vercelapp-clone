@@ -9,7 +9,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-         
         white:{
           100:"#fff",
         }
@@ -25,7 +24,7 @@ module.exports = {
         "4xl": "2.5rem",
         "5xl": "3rem",
         "6xl": "7.5rem",
-      },
+      }
     },
   },
   plugins: [],
