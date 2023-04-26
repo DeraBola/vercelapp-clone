@@ -36,7 +36,7 @@ export default function NavBar({ size }: Props) {
             : "w-full h-[4rem] flex justify-between z-20 bg-transparent backdrop-blur-lg fixed top-0 left-0 items-center px-4 lg:p-2 lg:px-20"
         }`}
       >
-        <div className="flex w-24 lg:w-30 items-center z-20">
+        <div className="flex w-24 lg:w-30 items-center z-20 mr-[7rem]">
           {showMenu ? (
             <Image src={Vercel} width={size} height={size} alt="" />
           ) : (
