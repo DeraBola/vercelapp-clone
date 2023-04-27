@@ -2,8 +2,11 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { HiBars2, HiChevronDown, HiChevronUp, HiOutlineChevronUpDown } from "react-icons/hi2";
+import { HiBars2, HiChevronDown, HiChevronUp } from "react-icons/hi2";
 import { AiOutlineClose } from "react-icons/ai";
+import { FiLayers, FiGlobe, FiActivity, FiTerminal } from "react-icons/fi";
+import { FaRegComment } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 import { useState, useEffect } from "react";
 import { Vercel } from "../../public/assets";
 import Modal from "./Modal";
@@ -13,12 +16,37 @@ interface Props {
   size: number;
 }
 export default function NavBar({ size }: Props) {
+  const data = [
+    {
+      icon: <FaRegComment size="14" />,
+      name: "Previews",
+    },
+    {
+      icon: <FiLayers size="14" />,
+      name: "Infrastructure",
+    },
+    {
+      icon: <SiNextdotjs size="14" />,
+      name: "Next.js",
+    },
+    {
+      icon: <FiGlobe size="14" />,
+      name: "Edge Functions",
+    },
+    {
+      icon: <FiActivity size="14" />,
+      name: "Analytics",
+    },
+    {
+      icon: <FiTerminal size="14" />,
+      name: "CLI & API",
+    },
+  ];
+
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [fix, setFix] = useState<boolean>(false);
   const [open, setOpen] = useState<boolean>(false);
-  //  const handleClick = () => {
-  //   setOpen(!open);
-  // };
+  const [dropdown, setDropdown] = useState<boolean>(false);
   useEffect(() => {
     const setFixed = () => {
       setFix(window.scrollY > 200);
@@ -53,7 +81,7 @@ export default function NavBar({ size }: Props) {
             >
               <Link href="#" className="flex gap-1 items-center">
                 Features
-              {open ? <HiChevronUp size="12" /> : <HiChevronDown size="12" />}
+                {open ? <HiChevronUp size="12" /> : <HiChevronDown size="12" />}
               </Link>
             </li>
             <li className="m-0 max-w-[30ch] text-sm opacity-70 flex items-center bg-transparent hover:opacity-100">
@@ -110,7 +138,7 @@ export default function NavBar({ size }: Props) {
         } z-10 w-full fixed flex py-5 bg-[#fff] justify-start items-center top-[4.5rem] transition-transform overflow-y-visible`}
       >
         <ul
-          className={`${inter.className} bg-[#fff] z-10 w-full h-full flex flex-col justify-start items-start px-2`}
+          className={`${inter.className} bg-[#fff] z-10 w-full h-full flex flex-col justify-start items-start px-4`}
         >
           <div className="mb-4 flex flex-col items-center w-full ">
             <li className="mb-4 p-1.5 text-sm opacity-70 border rounded-md w-full flex justify-center items-center text-[#666666]">
@@ -120,14 +148,24 @@ export default function NavBar({ size }: Props) {
               <Link href="/Project">Sign Up</Link>
             </li>
           </div>
-          <li className="mb-2 py-2 text-md items-center w-full  border-b text-[#000]">
-            <Link
-              href="/Genesispass"
-              className="flex justify-between items-center"
-            >
+          <li
+            className="mb-2 py-2 text-md items-center w-full  border-b text-[#000]"
+            onClick={() => setDropdown(!dropdown)}
+          >
+            <Link href="#" className="flex justify-between items-center mb-4">
               Features
-              <HiChevronDown size="16" />
+           {dropdown ? <HiChevronUp size="16" /> : <HiChevronDown size="16" />}   
             </Link>
+            {dropdown && (
+              <div className="dropdown">
+                {data.map((item, index) => (
+                  <div className="flex gap-3 mb-4 justify-start items-center" key={`data-${index}`}>
+                    {item.icon}
+                    <span className="text-md">{item.name}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </li>
           <li className="mb-2 py-2 text-md items-center w-full  border-b text-[#000]">
             <Link href="/Services">Docs</Link>
