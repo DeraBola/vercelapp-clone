@@ -135,7 +135,7 @@ export default function NavBar({ size }: Props) {
       <div
         className={`${
           showMenu ? "translate-y-0" : "translate-y-[-120%]"
-        } z-10 w-full fixed flex py-5 bg-[#fff] justify-start items-center top-[4.5rem] transition-transform overflow-y-visible`}
+        } z-10 w-full fixed flex py-5 bg-[#fff] justify-start items-center top-[4.5rem] transition-transform !overflow-y-scroll border-red-500 border-2`}
       >
         <ul
           className={`${inter.className} bg-[#fff] z-10 w-full h-full flex flex-col justify-start items-start px-4`}

@@ -5,9 +5,9 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen pb-16  w-100">
-     <p className={`${inter.className}`}>
-     derayfuyhf.iuugv.,jhgfccvbnkliuytrdeserytu7i890[p98t7r67e5432QWSZDXFCGVB]
+    <main className="flex min-h-screen p-16 border-2  w-full border-blue-500">
+     <p className={`${inter.className} mt-24 w-full`} >
+     Hello Deraaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
      </p>
     </main>
   );
