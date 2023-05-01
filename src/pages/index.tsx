@@ -14,16 +14,24 @@ export default function Home() {
     setIsHovered(!isHovered);
   };
   const colors = [
-    'bg-gradient-to-r from-blue-500 to-teal-400',
-    'bg-gradient-to-r from-purple-500 to-pink-500',
-    'bg-gradient-to-r from-red-500 to-yellow-400',
+    "bg-gradient-to-r from-blue-500 to-teal-400",
+    "bg-gradient-to-r from-purple-500 to-pink-500",
+    "bg-gradient-to-r from-red-500 to-yellow-400",
   ];
-  
+ const borderColors = [  "linear-gradient(to right, blue 0%, teal 100%)",  "linear-gradient(to right, purple 0%, pink 100%)",  "linear-gradient(to right, red 0%, yellow 100%)",];
+
+
+  const boxShadowColors = [
+    "from-blue-500 to-teal-400",
+    "from-purple-500 to-pink-5000",
+    "from-red-500 to-yellow-400",
+  ];
+
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentIndex((currentIndex + 1) % 3 as Index );
+      setCurrentIndex(((currentIndex + 1) % 3) as Index);
     }, 3000);
-    
+
     return () => clearInterval(intervalId);
   }, [currentIndex]);
   return (
@@ -58,19 +66,31 @@ export default function Home() {
           </div>
         </div>
         <div className="div-1 mb-6 flex lg:flex-row flex-col justify-center items-center ">
-  <span className={`Div1 text-transparent font-extrabold tracking-[-0.3rem] text-[7rem] me-2 bg-clip-text ${currentIndex === 0 ? colors[currentIndex] : 'bg-black'}`}>
-    Develop.
-  </span>
-  <span className={`Div2 text-transparent bg-clip-text font-extrabold tracking-[-0.3rem] text-[7rem] me-2 ${currentIndex === 1 ? colors[currentIndex] : 'bg-black'}`}>
-    Preview.
-  </span>
-  <span className={`Div3 text-transparent bg-clip-text font-extrabold tracking-[-0.3rem] text-[7rem] ${currentIndex === 2 ? colors[currentIndex] : 'bg-black'}  `}>
-    Ship.
-  </span>
-</div>
+          <span
+            className={`Div1 text-transparent font-extrabold tracking-[-0.3rem] text-[7rem] me-2 bg-clip-text ${
+              currentIndex === 0 ? colors[currentIndex] : "bg-black"
+            }`}
+          >
+            Develop.
+          </span>
+          <span
+            className={`Div2 text-transparent bg-clip-text font-extrabold tracking-[-0.3rem] text-[7rem] me-2 ${
+              currentIndex === 1 ? colors[currentIndex] : "bg-black"
+            }`}
+          >
+            Preview.
+          </span>
+          <span
+            className={`Div3 text-transparent bg-clip-text font-extrabold tracking-[-0.3rem] text-[7rem] ${
+              currentIndex === 2 ? colors[currentIndex] : "bg-black"
+            }  `}
+          >
+            Ship.
+          </span>
+        </div>
         <div className="div-2 mb-5 flex justify-center items-center mx-[10rem] ">
           <span className="font-regular tracking-[-0.03rem] text-[1.5rem] opacity-70">
-            Vercel is a platform for frontend developers, providing the speed{" "}
+            Vercel is a platform for frontend developers, providing the speed
             <br />
             and reliability inovators need to create at the moment of
             inspiration
@@ -98,9 +118,17 @@ export default function Home() {
               {isHovered ? "Start Deploying" : "Start Deploying"}
             </span>
           </button>
-          <button className=" bg-white-100 flex border-2 border-black items-center px-10 py-2.5 rounded-md font-medium ">
-            Get a Demo
-          </button>
+          <button
+  className={`flex border-2 rounded-lg font-medium px-10 py-2.5 items-center shadow-md 
+  `}
+  style={{
+    border: "2px solid transparent",
+    borderImage: borderColors[currentIndex],
+    borderImageSlice: "1"
+  }}
+>
+  Get a Demo
+</button>
         </div>
       </section>
     </main>
