@@ -18,8 +18,11 @@ export default function Home() {
     "bg-gradient-to-r from-purple-500 to-pink-500",
     "bg-gradient-to-r from-red-500 to-yellow-400",
   ];
- const borderColors = [  "linear-gradient(to right, blue 0%, teal 100%)",  "linear-gradient(to right, purple 0%, pink 100%)",  "linear-gradient(to right, red 0%, yellow 100%)",];
-
+  const borderColors = [
+    "linear-gradient(to right, #3B82F6 0%, #34D399 100%)",
+    "linear-gradient(to right, #8B5CF6 0%, #EC4899 100%)",
+    "linear-gradient(to right, #EF4444 0%, #FBBF24 100%)",
+  ];
 
   const boxShadowColors = [
     "from-blue-500 to-teal-400",
@@ -37,7 +40,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen p-16 border-2  w-full bg-white-100">
       <section className={`${inter.className} mt-20 mx-4 w-full bg-white-100`}>
-        <div className="flex justify-center items-center bg-white-100 ">
+        <a href="#" className="flex justify-center items-center bg-white-100 ">
           <div className="flex border rounded-r-none  rounded-md py-5 px-8 items-center">
             <div className="flex gap-3 me-5">
               <SiCircle size="26" />
@@ -64,7 +67,7 @@ export default function Home() {
           <div className="border-l-0 p-4 rounded-l-none items-center border py-5 px-8 rounded-md">
             <FiArrowUpRight size="26" />
           </div>
-        </div>
+        </a>
         <div className="div-1 mb-6 flex lg:flex-row flex-col justify-center items-center ">
           <span
             className={`Div1 text-transparent font-extrabold tracking-[-0.3rem] text-[7rem] me-2 bg-clip-text ${
@@ -100,7 +103,7 @@ export default function Home() {
           <button
             className={`flex px-6 py-2.5 bg-black border-1 font-medium items-center rounded-md ${
               isHovered
-                ? "hover:bg-white-100 hover:border-black hover:border-2"
+                ? "hover:bg-white-100 hover:border-black hover:border-2 transition duration-200"
                 : ""
             }`}
             onMouseEnter={handleHover}
@@ -118,17 +121,29 @@ export default function Home() {
               {isHovered ? "Start Deploying" : "Start Deploying"}
             </span>
           </button>
+          <div className="relative">
+            <div className={`absolute -inset-4 opacity-10  ${
+    currentIndex === 0
+      ?   "bg-gradient-to-r from-blue-500 to-teal-400"
+      : currentIndex === 1
+      ? "bg-gradient-to-r from-purple-500 to-pink-500"
+      : "bg-gradient-to-r from-red-500 to-yellow-400"
+  } rounded-full blur`}></div>
           <button
-  className={`flex border-2 rounded-lg font-medium px-10 py-2.5 items-center shadow-md 
-  `}
-  style={{
-    border: "2px solid transparent",
-    borderImage: borderColors[currentIndex],
-    borderImageSlice: "1"
-  }}
->
-  Get a Demo
-</button>
+            className={`flex relative rounded-md font-medium p-[2px] items-center shadow-md
+  ${
+    currentIndex === 0
+      ?   "bg-gradient-to-r from-blue-500 to-teal-400"
+      : currentIndex === 1
+      ? "bg-gradient-to-r from-purple-500 to-pink-500"
+      : "bg-gradient-to-r from-red-500 to-yellow-400"
+  }`}
+          >
+            <div className="flex items-center px-10 py-[7px] rounded-md justify-center bg-white-100 back">
+            Get Demo
+            </div>
+          </button>
+          </div>
         </div>
       </section>
     </main>
