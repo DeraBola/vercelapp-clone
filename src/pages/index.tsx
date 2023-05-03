@@ -4,6 +4,7 @@ import { SiCircle, SiSnowflake } from "react-icons/si";
 import { GiMoebiusTriangle, GiAbstract074, GiSewedShell } from "react-icons/gi";
 import { FiArrowUpRight } from "react-icons/fi";
 import { useState, useEffect } from "react";
+import ReuseAble from "@/component/ReuseAble";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -18,18 +19,7 @@ export default function Home() {
     "bg-gradient-to-r from-purple-500 to-pink-500",
     "bg-gradient-to-r from-red-500 to-yellow-400",
   ];
-  const borderColors = [
-    "linear-gradient(to right, #3B82F6 0%, #34D399 100%)",
-    "linear-gradient(to right, #8B5CF6 0%, #EC4899 100%)",
-    "linear-gradient(to right, #EF4444 0%, #FBBF24 100%)",
-  ];
-
-  const boxShadowColors = [
-    "from-blue-500 to-teal-400",
-    "from-purple-500 to-pink-5000",
-    "from-red-500 to-yellow-400",
-  ];
-
+   
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex(((currentIndex + 1) % 3) as Index);
@@ -38,7 +28,7 @@ export default function Home() {
     return () => clearInterval(intervalId);
   }, [currentIndex]);
   return (
-    <main className="flex min-h-screen p-16 border-2  w-full bg-white-100">
+    <main className="min-h-screen p-16 border-2  w-full bg-white-100">
       <section className={`${inter.className} mt-20 mx-4 w-full bg-white-100`}>
         <a href="#" className="flex justify-center items-center bg-white-100 ">
           <div className="flex border rounded-r-none  rounded-md py-5 px-8 items-center">
@@ -122,29 +112,36 @@ export default function Home() {
             </span>
           </button>
           <div className="relative">
-            <div className={`absolute -inset-4 opacity-10  ${
-    currentIndex === 0
-      ?   "bg-gradient-to-r from-blue-500 to-teal-400"
-      : currentIndex === 1
-      ? "bg-gradient-to-r from-purple-500 to-pink-500"
-      : "bg-gradient-to-r from-red-500 to-yellow-400"
-  } rounded-full blur`}></div>
-          <button
-            className={`flex relative rounded-md font-medium p-[2px] items-center shadow-md
+            <div
+              className={`absolute -inset-4 opacity-10  ${
+                currentIndex === 0
+                  ? "bg-gradient-to-r from-blue-500 to-teal-400"
+                  : currentIndex === 1
+                  ? "bg-gradient-to-r from-purple-500 to-pink-500"
+                  : "bg-gradient-to-r from-red-500 to-yellow-400"
+              } rounded-full blur`}
+            ></div>
+            <button
+              className={`flex relative rounded-md font-medium p-[2px] items-center shadow-md
   ${
     currentIndex === 0
-      ?   "bg-gradient-to-r from-blue-500 to-teal-400"
+      ? "bg-gradient-to-r from-blue-500 to-teal-400"
       : currentIndex === 1
       ? "bg-gradient-to-r from-purple-500 to-pink-500"
       : "bg-gradient-to-r from-red-500 to-yellow-400"
   }`}
-          >
-            <div className="flex items-center px-10 py-[7px] rounded-md justify-center bg-white-100 back">
-            Get Demo
-            </div>
-          </button>
+            >
+              <div className="flex items-center px-10 py-[7px] rounded-md justify-center bg-white-100 back">
+                Get Demo
+              </div>
+            </button>
           </div>
         </div>
+      </section>
+      <section className={`${inter.className} mt-[4rem] mx-4 p-2 w-full bg-blue-500`}>
+<div className="d">
+<ReuseAble />
+</div>
       </section>
     </main>
   );
