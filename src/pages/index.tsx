@@ -113,7 +113,7 @@ export default function Home() {
           </button>
           <div className="relative">
             <div
-              className={`absolute -inset-4 opacity-10  ${
+              className={`absolute -inset-4 opacity-[0.2]  ${
                 currentIndex === 0
                   ? "bg-gradient-to-r from-blue-500 to-teal-400"
                   : currentIndex === 1
@@ -122,7 +122,7 @@ export default function Home() {
               } rounded-full blur`}
             ></div>
             <button
-              className={`flex relative rounded-md font-medium p-[2px] items-center shadow-md
+              className={`flex relative rounded-md font-medium p-[1px] items-center shadow-lg
   ${
     currentIndex === 0
       ? "bg-gradient-to-r from-blue-500 to-teal-400"
@@ -140,7 +140,7 @@ export default function Home() {
       </section>
       <section className={`${inter.className} mt-[4rem] mx-4 p-2 w-full bg-blue-500`}>
 <div className="d">
-<ReuseAble />
+<ReuseAble size={90} height={20} sizes={170} />
 </div>
       </section>
     </main>

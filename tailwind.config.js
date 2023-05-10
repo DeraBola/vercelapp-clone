@@ -11,6 +11,8 @@ module.exports = {
       colors: {
         white:{
           100:"#fff",
+        },
+        customBlue: "#019AE9",
         }
       },
       fontSize: {
@@ -25,7 +27,6 @@ module.exports = {
         "5xl": "3rem",
         "6xl": "7.5rem",
       }
-    },
   },
   plugins: [],
 }
