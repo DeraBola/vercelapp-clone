@@ -12,7 +12,7 @@ import {
   UnderArmour,
   Zapier,
 } from "../../public/assets";
-
+import ReuseAbleBox from "./ReuseAbleBox";
 const inter = Inter({ subsets: ["latin"] });
 interface Props {
   size: number;
@@ -21,7 +21,7 @@ interface Props {
 }
 function ReuseAble({ size, sizes, height }: Props) {
   return (
-    <div className={`${inter.className}  w-full bg-green-300`}>
+    <div className={`${inter.className}  w-full `}>
       <span className="uppercase text-[12px] tracking-[0.2rem] leading-2 flex justify-center text-center text-[#666] font-semibold p-1">
         Trusted by the best frontend teams
       </span>
@@ -59,27 +59,34 @@ function ReuseAble({ size, sizes, height }: Props) {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center bg-orange-950">
+      <div className="flex flex-col justify-center items-center ">
         <span className="uppercase text-[12px] tracking-[0.2rem] leading-2 flex justify-center text-center text-[#666] font-semibold p-1 mb-10">
           Explore the vercel way
         </span>
-        <div className="transform skew-y-20 w-1 h-20 bg-gradient-to-r from-white-100 to-customBlue"></div>
+        <div className="w-[1px] h-[8rem] bg-gradient-to-t from-customBlue to-white-100 "></div>
         <div className="flex items-center justify-center w-10 h-10  bg-gradient-to-r from-blue-500 to-teal-400 rounded-full">
-          <span className="flex items-center justify-center text-white-100 text-md font-semibold ">1</span>
+          <span className="flex items-center justify-center text-white-100 text-md font-semibold ">
+            1
+          </span>
         </div>
-        <div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400 capitalize mt-6 font-bold text-[2rem]">Develop</div>
+        <div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400 capitalize mt-6 font-bold text-[2rem]">
+          Develop
+        </div>
       </div>
-      <div className="div3">
-        <div className="Hi">Build when inspiration strikes</div>
-        <span>
-          Free developers from time-consuming, unnecessary processes that slow
-          your work, so you and your team can focus on creating.
+      <div className="flex justify-center items-center flex-col ">
+        <div className="text-black tracking-[-0.2rem] text-[4rem] font-extrabold">
+          Build when inspiration strikes
+        </div>
+        <span className="mb-[3rem] font-regular tracking-[-0.03rem] text-[20px] opacity-60">
+          Free developers from time-consuming, unnecessary processes that
+          <br></br> slow your work, so you and your team can focus on creating.
         </span>
       </div>
-      <div className="div4">
-        <div className="divA"></div>
-        <div className="divB">
+      <div className="flex w-full gap-5">
+        <ReuseAbleBox />
+        <div className="divB w-1/2 bg-yellow-950">
           <div className="icon1">
+            <span>The complete toolkit for the Web</span>
             <span>
               Everything you need to build your site exactly how you imagine,
               from automatic API handling to built-in image and performance

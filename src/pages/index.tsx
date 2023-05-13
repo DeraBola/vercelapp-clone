@@ -19,7 +19,7 @@ export default function Home() {
     "bg-gradient-to-r from-purple-500 to-pink-500",
     "bg-gradient-to-r from-red-500 to-yellow-400",
   ];
-   
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex(((currentIndex + 1) % 3) as Index);
@@ -82,7 +82,7 @@ export default function Home() {
           </span>
         </div>
         <div className="div-2 mb-5 flex justify-center items-center mx-[10rem] ">
-          <span className="font-regular tracking-[-0.03rem] text-[1.5rem] opacity-70">
+          <span className="font-regular tracking-[-0.03rem] text-[1.6rem] opacity-60">
             Vercel is a platform for frontend developers, providing the speed
             <br />
             and reliability inovators need to create at the moment of
@@ -138,10 +138,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className={`${inter.className} mt-[4rem] mx-4 p-2 w-full bg-blue-500`}>
-<div className="d">
-<ReuseAble size={90} height={20} sizes={170} />
-</div>
+      <section className={`${inter.className} mt-[4rem] mx-4 p-2 w-full `}>
+        <div className="d">
+          <ReuseAble size={90} height={20} sizes={170} />
+        </div>
       </section>
     </main>
   );
